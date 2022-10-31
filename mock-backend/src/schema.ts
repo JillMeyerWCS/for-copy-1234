@@ -1,3 +1,4 @@
+export const typeDefs = `
 """
 Represents a string in ISO irgendwas
 """
@@ -62,3 +63,5 @@ type Mutation {
   deleteProject: Boolean!
   updateProject(projectId: String!, input: ProjectsInput): Project!
 }
+
+`;
