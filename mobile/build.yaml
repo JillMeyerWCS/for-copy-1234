@@ -1,0 +1,17 @@
+targets:
+  $default:
+    builders:
+      artemis:
+        options:
+          generate_helpers: true
+          scalar_mapping:
+            - custom_parser_import: 'package:mobile/graphql/coercers.dart'
+              graphql_type: DateTime
+              dart_type: DateTime
+              use_custom_parser: true
+          schema_mapping:
+            - output: lib/graphql/graphql_api.dart
+              schema: lib/schema.graphql
+              queries_glob: lib/graphql/*.graphql
+
+
