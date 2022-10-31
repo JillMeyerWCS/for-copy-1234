@@ -7,7 +7,7 @@ class ApiService {
 
   ApiService._();
 
-  ArtemisClient _client = ArtemisClient("/graphql");
+  ArtemisClient _client = ArtemisClient("http://localhost:4000");
 
   factory ApiService() => _instance;
 
@@ -16,7 +16,8 @@ class ApiService {
     if (result.hasErrors) {
       throw ApiError(result, "GET_COMPANIES");
     }
-    return Future.delayed(const Duration(milliseconds: 200), () => []);
+    return Future.delayed(const Duration(seconds: 1),
+        () => result.data?.companies.map((e) => e.name).toList() ?? []);
   }
 
   updateClient(String graphQLEndpoint) =>

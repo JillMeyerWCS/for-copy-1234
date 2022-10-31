@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
-import 'package:mobile/screens/companies.dart';
+import 'package:mobile/screens/companies_page.dart';
 import 'package:mobile/screens/error_page.dart';
-import 'package:mobile/screens/welcome.dart';
+import 'package:mobile/screens/welcome_page.dart';
 
 final router = GoRouter(
   errorPageBuilder: (_, state) => NoTransitionPage(child: ErrorPage(error: state.error)),

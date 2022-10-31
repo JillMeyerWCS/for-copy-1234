@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:wcs_design_mobile/wcs_design_mobile.dart';
 
 class ErrorDisplay extends StatelessWidget {
@@ -8,6 +7,7 @@ class ErrorDisplay extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(error);
     return Column(
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
