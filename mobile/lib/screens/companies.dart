@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/api_service.dart';
+import 'package:mobile/widgets/error_display.dart';
 import 'package:wcs_design_mobile/wcs_design_mobile.dart';
 
 class CompaniesPage extends StatelessWidget {
@@ -11,7 +12,7 @@ class CompaniesPage extends StatelessWidget {
       appBar: AppBar(
         title: const Headline1("Companies"),
       ),
-      body: const CompanyNamesList(),
+      body: const Center(child: CompanyNamesList()),
     );
   }
 }
@@ -30,6 +31,11 @@ class _CompanyNamesListState extends State<CompanyNamesList> {
   Widget build(BuildContext context) {
     return FutureBuilder<List<String>>(
       builder: (BuildContext context, AsyncSnapshot<List<String>> snapshot) {
+        if (snapshot.hasError) {
+          return ErrorDisplay(
+            error: snapshot.error,
+          );
+        }
         if (snapshot.hasData) {
           if (snapshot.data != null && snapshot.data!.isNotEmpty) {
             return Column(

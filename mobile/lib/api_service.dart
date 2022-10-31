@@ -23,12 +23,11 @@ class ApiService {
       _client = ArtemisClient(graphQLEndpoint);
 }
 
-class ApiError extends Error {
-  ApiError(this.response, [this.queryDescription = "unknown"])
-      : assert(response.hasErrors),
-        assert(response.errors!.isNotEmpty);
-  GraphQLResponse response;
-  String queryDescription;
+class ApiError implements Exception {
+  const ApiError(this.response, [this.queryDescription = "unknown"]);
+
+  final GraphQLResponse response;
+  final String queryDescription;
 
   @override
   String toString() {
