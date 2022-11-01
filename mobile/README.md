@@ -3,6 +3,35 @@
 Welcome to the mobile development part of the hackathon!
 
 This folder contains everything to get you started on exploring GraphQL with Flutter.
+Read through everything carefully to both understand your task and the existing code.
+
+# Task
+
+As the goal of this Hackathon is to learn about GraphQL, you can design the frontend as you like.
+Go minimalistic and almost text only if you want to focus on the GraphQL part.
+Otherwise, feel free to express yourself.
+
+The GraphQL operations you should use in this app are the following:
+
+- use the `companies` query to show all available companies
+- use the `company(uuid)` query to retrieve details about a company
+- use the `projects(companyId)` query to retrieve projects for a company
+- use the `project(uuid)` query to retrieve details about a project
+- use the `createProject(input: ProjectsInput)` mutation to create a project
+- use the `deleteProject` mutation to delete a project
+- use the `updateProject(projectId: String!, input: ProjectsInput)` update a project 
+
+You don't have to use all the operations.
+Feel free to play around with a single one to explore your options.
+This could be with a focus on error handling, loading, re-fetching,
+changing requested params on the fly with directives, nesting entities,
+requesting multiple queries with one request, playing around with aliases,
+and whatever you can come up with!
+Remember the goal is learning, and the more different stuff each of us
+looks at, the more we learn as a team.
+
+At the end of the coding part, we will run different frontend implementations
+against different backend implementations, so everyone can show of what they learned.
 
 # Packages
 The following packages are already setup:
