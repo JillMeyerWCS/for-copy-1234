@@ -1,0 +1,17 @@
+# Supports
+# https://github.com/igorshubovych/markdouuownlint-cli
+# https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint
+# https://github.com/marketplace/actions/markdown-linting-action
+# Using YAML for comments instead of json (and jsonc is not supported in all tools)
+#
+# ATTN: when using markdownlint-cli it ignores wrong config files and silently uses the default config instead!
+# https://github.com/igorshubovych/markdownlint-cli/issues/105
+# Github Extension complains as expected.
+#
+# rules
+default: true
+MD003: { style: atx }     # Heading style
+MD013: false              # Don't care about fixed line length
+MD024: false              # Don't care about html anchor duplicates
+MD034: false              # Github handles bare urls just fine
+MD041: false              # Don't care about title requirement

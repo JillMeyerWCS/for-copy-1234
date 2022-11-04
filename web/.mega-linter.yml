@@ -1,0 +1,29 @@
+# Configuration file for Mega-Linter
+# See all available variables at https://nvuillam.github.io/mega-linter/configuration/ and in linters documentation
+
+# Linter config
+# only enable following linters
+ENABLE_LINTERS:
+- MARKDOWN_MARKDOWNLINT
+- DOCKERFILE_HADOLINT
+- TSX_ESLINT
+- TYPESCRIPT_PRETTIER
+
+MARKDOWN_MARKDOWNLINT_CONFIG_FILE: .markdownlint.yaml
+
+PRE_COMMANDS:
+  - command: npm install
+
+# Mega-Linter operation
+# LOG_LEVEL: DEBUG
+PRINT_ALPACA: false
+VALIDATE_ALL_CODEBASE: true
+APPLY_FIXES: 
+  - TSX_ESLINT
+  - TYPESCRIPT_PRETTIER
+APPLY_FIXES_EVENT: pull_request
+APPLY_FIXES_MODE: commit
+SHOW_ELAPSED_TIME: true
+TSX_ESLINT_ES_FILE_EXTENSIONS: [".ts", ".tsx"]
+TSX_ESLINT_CONFIG_FILE: .eslintrc.ci.js
+TSX_ESLINT_FILTER_REGEX_EXCLUDE: (/^.*test.*\.(ts|tsx)$/i)
