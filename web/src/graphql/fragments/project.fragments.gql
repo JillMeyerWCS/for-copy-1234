@@ -1,0 +1,18 @@
+fragment projectRequiredData on Project {
+  uuid
+  title
+  owner {
+    ...userData
+  }
+  employees {
+    ...userData
+  }
+}
+
+fragment projectData on Project {
+  ...projectRequiredData
+  projectNumber
+  budget
+  customer
+  address
+}

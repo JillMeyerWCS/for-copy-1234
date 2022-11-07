@@ -1,0 +1,11 @@
+query GET_COMPANIES {
+  companies {
+    ...companyData
+  }
+}
+
+query GET_COMPANY_BY_ID($companyId: String!) {
+  company(uuid: $companyId) {
+    ...companyData
+  }
+}

@@ -1,0 +1,11 @@
+fragment companyData on Company {
+  uuid
+  name
+  address
+  email
+  registration
+  branding
+  projects {
+    ...projectRequiredData
+  }
+}

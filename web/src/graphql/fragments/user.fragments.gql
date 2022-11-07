@@ -1,0 +1,11 @@
+fragment userRequiredData on User {
+  uuid
+}
+
+fragment userData on User {
+  ...userRequiredData
+  firstName
+  lastName
+  email
+}
+
