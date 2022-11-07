@@ -9,6 +9,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run generate`
+
+Run it after cloning repo and after update fragments, mutations, queries or subscriptions.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -47,3 +51,25 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+[React Router documenation](https://reactrouter.com/en/v6.3.0/getting-started/overview).
+
+[Apollo Client documenation](https://www.apollographql.com/docs/react).
+
+[Chakra-ui documenation](https://chakra-ui.com/docs/components).
+
+## Environment Variables
+
+To run locally you need to add .env file to the root `web` folder with this variables:
+
+- **REACT_APP_URL**=http://localhost:3000
+- **REACT_APP_API_URL**=http://localhost:4000
+- **REACT_APP_GRAPHQL_URL**: http://localhost:4000
+- **REACT_APP_GRAPHQL_WS**: ws://localhost:4000
+
+## Flow to run project:
+1. `npm install` to install dependencies.
+2. `npm run generate` to generate gql files.
+3. Add `.env` file into the **web** root folder.
+4. Run backend from **mock-backend** folder in other terminal (`npm install` and then `npm run start`).
+5. `npm run start` to run project locally.
