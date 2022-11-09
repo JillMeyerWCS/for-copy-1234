@@ -1,5 +1,5 @@
 """
-Represents a string in ISO irgendwas
+Represents a string complying to ISO 8601
 """
 scalar DateTime
 
@@ -10,7 +10,7 @@ enum Branding {
 }
 
 type Company {
-  uuid: String!
+  uuid: ID!
   name: String!
   address: String
   email: String!
@@ -20,7 +20,7 @@ type Company {
 }
 
 type Project {
-  uuid: String!
+  uuid: ID!
   title: String!
   projectNumber: String
   budget: String
@@ -33,7 +33,7 @@ type Project {
 
 # MAYBE, re-evaluate at the end
 type User {
-  uuid: String!
+  uuid: ID!
   firstName: String
   lastName: String
   email: String
@@ -51,14 +51,14 @@ input ProjectsInput {
 }
 
 type Query {
-  company(uuid: String!): Company!
+  company(uuid: ID!): Company!
   companies: [Company!]!
-  project(uuid: String!): Project!
-  projects(companyId: String): [Project!]!
+  project(uuid: ID!): Project!
+  projects(companyId: ID): [Project!]!
 }
 
 type Mutation {
   createProject(input: ProjectsInput): Project!
-  deleteProject: Boolean!
-  updateProject(projectId: String!, input: ProjectsInput): Project!
+  deleteProject(projectId: ID!): Boolean!
+  updateProject(projectId: ID!, input: ProjectsInput): Project!
 }

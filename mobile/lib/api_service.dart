@@ -7,7 +7,7 @@ class ApiService {
 
   ApiService._();
 
-  ArtemisClient _client = ArtemisClient("http://localhost:4000");
+  ArtemisClient _client = ArtemisClient("http://localhost:4000/graphql");
 
   factory ApiService() => _instance;
 
