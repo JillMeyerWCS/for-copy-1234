@@ -62,12 +62,15 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 
 To run locally you need to add .env file to the root `web` folder with this variables:
 
-- **REACT_APP_URL**=http://localhost:3000
-- **REACT_APP_API_URL**=http://localhost:4000
-- **REACT_APP_GRAPHQL_URL**: http://localhost:4000
-- **REACT_APP_GRAPHQL_WS**: ws://localhost:4000
+```
+REACT_APP_URL=http://localhost:3000
+REACT_APP_API_URL=http://localhost:4000
+REACT_APP_GRAPHQL_URL=http://localhost:4000
+REACT_APP_GRAPHQL_WS=ws://localhost:4000
+```
 
 ## Flow to run project:
+0. Check if you have NodeJS already installed on your machine by running command `node -v` in your terminal. If there is no then download and install it from [here](https://nodejs.org/en/). Then return to your project folder.
 1. `npm install` to install dependencies.
 2. `npm run generate` to generate gql files.
 3. Add `.env` file into the **web** root folder.
