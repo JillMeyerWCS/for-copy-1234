@@ -6,5 +6,5 @@ import org.springframework.stereotype.Component
 
 @Component
 class EntityMapper {
-    fun map(jpa: CompanyJPAEntity): Company = Company(jpa.uuid.toString(), jpa.name)
+    fun map(jpa: CompanyJPAEntity): Company = Company(jpa.recid.toString(), jpa.name)
 }

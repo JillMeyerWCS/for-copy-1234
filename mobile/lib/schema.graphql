@@ -10,7 +10,7 @@ enum Branding {
 }
 
 type Company {
-  uuid: ID!
+  recid: ID!
   name: String!
   address: String
   email: String!
@@ -51,7 +51,7 @@ input ProjectsInput {
 }
 
 type Query {
-  company(uuid: ID!): Company!
+  company(recid: ID!): Company!
   companies: [Company!]!
   project(uuid: ID!): Project!
   projects(companyId: ID): [Project!]!

@@ -13,13 +13,16 @@ import javax.persistence.EntityNotFoundException
 @Service
 class CompanyService(val companyRepository: CompanyRepository, val mapper: EntityMapper) {
 
-    fun findCompanyById(id: String): Company {
-        val uuid = UUID.fromString(id)
+    fun findCompanyById(id: Int): Company {
         try {
-            val company = companyRepository.getReferenceById(uuid)
+            val company = companyRepository.getReferenceById(id)
             return mapper.map(company)
         } catch (e: DataAccessException) {
             throw NoSuchCompanyException("could not find company for provided id '$id'")
         }
+    }
+
+    fun findCompanies(): List<Company> {
+        return companyRepository.findAll().map { mapper.map(it) }
     }
 }

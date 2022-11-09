@@ -12,8 +12,12 @@ class CompanyController(
 ) {
 
     @QueryMapping
-    fun company(@Argument uuid: String): Company {
-        return companyService.findCompanyById(uuid)
+    fun company(@Argument recid: Int): Company {
+        return companyService.findCompanyById(recid)
     }
 
+    @QueryMapping
+    fun companies(): List<Company> {
+        return companyService.findCompanies()
+    }
 }
