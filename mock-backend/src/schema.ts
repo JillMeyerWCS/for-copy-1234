@@ -1,6 +1,5 @@
-export const typeDefs = `
-"""
-Represents a string in ISO irgendwas
+export const typeDefs = `"""
+Represents a string complying to ISO 8601
 """
 scalar DateTime
 
@@ -8,10 +7,12 @@ enum Branding {
   AWGK
   EDOOLI
   FEGA
+  WUERTH
+  TOWIO
 }
 
 type Company {
-  uuid: String!
+  recid: ID!
   name: String!
   address: String
   email: String!
@@ -21,23 +22,12 @@ type Company {
 }
 
 type Project {
-  uuid: String!
+  uuid: ID!
   title: String!
   projectNumber: String
   budget: String
   customer: String
   address: String
-  # maybe
-  owner: User!
-  employees: [User!]!
-}
-
-# MAYBE, re-evaluate at the end
-type User {
-  uuid: String!
-  firstName: String
-  lastName: String
-  email: String
 }
 
 input ProjectsInput {
@@ -46,22 +36,18 @@ input ProjectsInput {
   budget: String
   customer: String
   address: String
-  # maybe
-  ownerId: String!
-  employeeIds: [String!]!
 }
 
 type Query {
-  company(uuid: String!): Company!
+  company(recid: ID!): Company!
   companies: [Company!]!
-  project(uuid: String!): Project!
-  projects(companyId: String): [Project!]!
+  project(uuid: ID!): Project!
+  projects(companyId: ID): [Project!]!
 }
 
 type Mutation {
   createProject(input: ProjectsInput): Project!
-  deleteProject: Boolean!
-  updateProject(projectId: String!, input: ProjectsInput): Project!
+  deleteProject(projectId: ID!): Boolean!
+  updateProject(projectId: ID!, input: ProjectsInput): Project!
 }
-
 `;

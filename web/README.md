@@ -1,5 +1,13 @@
 # frontend
-Base React App to run web-frontend 
+
+Welcome to the web development part of the hackathon!
+
+This folder contains everything to get you started on exploring GraphQL with React.
+Read through everything carefully to both understand your task and the existing code.
+
+# Task
+
+The task is described in [../README.md](../README.md#frontend-goals)
 
 # Getting Started with Create React App
 
@@ -70,6 +78,7 @@ REACT_APP_GRAPHQL_WS=ws://localhost:4000
 ```
 
 ## Flow to run project:
+
 0. Check if you have NodeJS already installed on your machine by running command `node -v` in your terminal. If there is no then download and install it from [here](https://nodejs.org/en/). Then return to your project folder.
 1. `npm install` to install dependencies.
 2. `npm run generate` to generate gql files.

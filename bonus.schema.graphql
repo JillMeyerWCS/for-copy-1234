@@ -28,6 +28,17 @@ type Project {
   budget: String
   customer: String
   address: String
+  # maybe
+  owner: User!
+  employees: [User!]!
+}
+
+# MAYBE, re-evaluate at the end
+type User {
+  uuid: ID!
+  firstName: String
+  lastName: String
+  email: String
 }
 
 input ProjectsInput {
@@ -36,6 +47,26 @@ input ProjectsInput {
   budget: String
   customer: String
   address: String
+  # maybe
+  ownerId: String!
+  employeeIds: [String!]!
+}
+
+type PageInfo {
+  totalCount: Int
+  pageCount: Int
+  startCursor: ID
+  endCursor: ID
+}
+
+type ProjectsPage {
+  info: PageInfo
+  nodes: [Project!]!
+}
+
+type CompaniesPage {
+  info: PageInfo
+  nodes: [Company!]!
 }
 
 type Query {
@@ -43,6 +74,8 @@ type Query {
   companies: [Company!]!
   project(uuid: ID!): Project!
   projects(companyId: ID): [Project!]!
+  user(uuid: ID): User!
+  users: [User!]!
 }
 
 type Mutation {

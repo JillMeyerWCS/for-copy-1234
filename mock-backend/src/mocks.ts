@@ -1,6 +1,7 @@
 import { faker } from "@faker-js/faker";
 
 const mockId = () => faker.datatype.uuid();
+const mockRecId = () => faker.datatype.bigInt();
 const mockTopLevelDomain = () => faker.internet.domainSuffix();
 
 const mockList = <T>(dataFactory: () => T, maxLength = 10): T[] => {
@@ -13,12 +14,12 @@ const mockList = <T>(dataFactory: () => T, maxLength = 10): T[] => {
 
 const mockDateTime = () => faker.date.recent(10).toISOString();
 const mockBranding = () =>
-  faker.helpers.arrayElement(["AWGK", "EDOOLI", "FEGA"]);
+  faker.helpers.arrayElement(["AWGK", "EDOOLI", "FEGA", "WUERTH", "TOWIO"]);
 
 const mockCompany = () => {
   let companyname = faker.company.name();
   return {
-    uuid: mockId(),
+    recid: mockId(),
     name: companyname,
     address: faker.address.streetAddress(),
     email: "management@" + companyname + "." + mockTopLevelDomain(),
