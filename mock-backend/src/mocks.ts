@@ -49,8 +49,8 @@ const mockProject = () => {
     budget: faker.commerce.price(),
     customer: faker.commerce.department(),
     address: faker.address.streetAddress(),
-    owner: mockUser(),
-    employees: mockList(mockUser),
+    // owner: mockUser(),
+    // employees: mockList(mockUser),
   };
 };
 
