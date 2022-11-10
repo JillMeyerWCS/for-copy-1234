@@ -18,8 +18,8 @@ export const CompaniesList: React.FC = () => {
     >
       {companies.map(company => (
         <CompanyItem
-          key={company.uuid}
-          companyId={company.uuid}
+          key={company.recid}
+          companyId={company.recid}
           title={company.name}
         />
       ))}

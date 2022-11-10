@@ -1,7 +1,7 @@
 import React from "react";
 import { Stack, Text } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
 import { IoArrowBackSharp } from "react-icons/io5";
+import { Link } from "react-router-dom";
 import { routes } from "../../../utils";
 
 interface Props {
