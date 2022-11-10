@@ -4,8 +4,8 @@ query GET_COMPANIES {
   }
 }
 
-query GET_COMPANY_BY_ID($companyId: String!) {
-  company(uuid: $companyId) {
+query GET_COMPANY_BY_ID($companyId: ID!) {
+  company(recid: $companyId) {
     ...companyData
   }
 }

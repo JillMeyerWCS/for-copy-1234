@@ -1,5 +1,5 @@
 fragment companyData on Company {
-  uuid
+  recid
   name
   address
   email
